@@ -1,0 +1,52 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "standard",
+    "standard-react",
+    "plugin:format-message/recommended",
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "immutable"
+  ],
+  "rules": {
+    "immutable/no-mutation": "error",
+    "react/jsx-handler-names": "off",
+    "react/jsx-no-bind": [
+      "error",
+      {
+        "ignoreRefs": true
+      }
+    ],
+    "react/no-deprecated": "error",
+    "react/no-unused-prop-types": "off",
+    "require-jsdoc": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "16.13.1"
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.{ts,tsx}"
+      ],
+      "rules": {
+        "no-useless-constructor": "off",
+        "@typescript-eslint/no-useless-constructor": "error",
+        "no-unused-vars": "off"
+      },
+      "parser": "@typescript-eslint/parser",
+      "plugins": [
+        "@typescript-eslint"
+      ]
+    }
+  ]
+}
