@@ -25,8 +25,7 @@
       }
     ],
     "react/no-deprecated": "error",
-    "react/no-unused-prop-types": "off",
-    "require-jsdoc": "off"
+    "react/no-unused-prop-types": "off"
   },
   "settings": {
     "react": {
