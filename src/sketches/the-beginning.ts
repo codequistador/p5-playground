@@ -1,12 +1,27 @@
+import star from '../util/star'
+
 export default function sketch(p5) {
-  p5.setup = () => p5.createCanvas(800, 800)
+  var hue
+  var fps
+
+  p5.setup = () => {
+    p5.createCanvas(p5.windowWidth, p5.windowHeight)
+    p5.colorMode(p5.HSL, 360)
+    p5.frameRate(fps)
+    // p5.background(0)
+    hue = 0
+    fps = 10
+  }
 
   p5.draw = () => {
-    if (p5.mouseIsPressed) {
-      p5.fill(0)
-    } else {
-      p5.fill(255)
-    }
-    p5.ellipse(p5.mouseX, p5.mouseY, 80, 80)
+    hue > 360 ? (hue = 0) : (hue += 20)
+    fps > 90 ? (fps = 10) : fps++
+    p5.background(0)
+    p5.frameRate(fps)
+    p5.translate(p5.width * p5.random(), p5.height * p5.random())
+    p5.rotate(p5.frameCount / 90)
+    p5.noStroke()
+    p5.fill(hue, 200, 200)
+    star(p5, 0, 0, 30, 70, 1000)
   }
 }
