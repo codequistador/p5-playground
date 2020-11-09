@@ -1,7 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import P5Wrapper from 'react-p5-wrapper'
-import sketch from './sketches/the-beginning'
+// import beginnings from './sketches/the-beginning'
+import sketch from './sketches/line-tease'
 import 'normalize.css'
 
 function App() {
